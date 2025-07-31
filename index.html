@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
-    <title>Document</title>
+    <title>Bassline: Music for everyone</title>
 </head>
 
 <body>
@@ -26,7 +26,22 @@
                     <h2>
                         Your Library
                     </h2>
+                    
                 </div>
+
+                <div class="songlist">
+                        <ul>
+                            <li>
+
+                                <img class="invert" src="music.svg" alt="">
+                                <div class="info">
+                                    <div>Song Name</div>
+                                    <div>Song Artist</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 <div class="footer">
                     <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
                     <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
@@ -42,7 +57,7 @@
         <div class="right bg-grey rounded ">
             <div class="header">
                 <div class="nav">
-                    <img width="40" class="invert hamburger" src="img/hamburger.svg" alt="">
+                    <!-- <img width="40" class="invert hamburger" src="hamburger.svg" alt=""> -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
@@ -55,29 +70,57 @@
                     </svg>
                 </div>
                 <div class="buttons">
-                    <button>Signup</button>
-                    <button>Login</button>
+                    <button class="signupbtn">Sign up</button>
+                    <button class="loginbtn">Log in</button>
                 </div>
             </div>
             <div class="spotifyPlaylist">
-                <h1>Spotify Playlists</h1>
+                <h1>Bassline Playlists</h1>
                 <div class="cardContainer">
                     <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" fill="#000" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
                         <img src="https://i.scdn.co/image/ab67706f0000000249a1ed33d2ca64e6a5d0e550" alt="">
                         <h2>happy Hits!</h2>
                         <p>Hits to boost your mood and fill you with happiness!</p>
 
                     </div>
                     <div class="card">
+                        <div class="play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" fill="#000" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
                         <img src="https://i.scdn.co/image/ab67706f0000000249a1ed33d2ca64e6a5d0e550" alt="">
                         <h2>happy Hits!</h2>
                         <p>Hits to boost your mood and fill you with happiness!</p>
 
                     </div>
+
+
+                </div>
+                <div class="playbar">
+                    <div class="songinfo">
+
+                    </div>
+                    <div class="songbuttons">
+                        <img src="prevsong.svg" alt="">
+                        <img src="play.svg" alt="">
+                        <img src="nextsong.svg" alt="">
+                    </div>
+                    <div class="songtime"></div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
