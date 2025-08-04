@@ -1,5 +1,6 @@
 console.log("Lets write js")
 let currentSong = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -54,7 +55,7 @@ async function main() {
 
 
     // Get the list of all the songs
-    let songs = await getsongs()
+   songs = await getsongs()
     playMusic(songs[0] , true)
 
 
@@ -98,7 +99,7 @@ async function main() {
 
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration);
-        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime )}/${secondsToMinutesSeconds(currentSong.duration)}`
         document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration)* 100 + "%";
     })
 
@@ -120,6 +121,17 @@ async function main() {
     // Add an event listner for close button
     document.querySelector(".close").addEventListener("click",()=>{
         document.querySelector(".left").style.left = "-120%"
+    })
+
+    // Add an event listner for previous and next
+    previous.addEventListener("click",()=>{
+        console.log("Previous clicked")
+    })
+
+    next.addEventListener("click",()=>{
+        console.log("Previous clicked")
+        console.log(currentSong.src)
+        console.log(songs)
     })
 
 

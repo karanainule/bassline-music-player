@@ -13,6 +13,10 @@ body {
     color: white;
 }
 
+.close{
+    display: none;
+}
+
 
 .left {
     width: 25vw;
@@ -86,14 +90,13 @@ body {
     padding: 20px;
 }
 
-.basslinePlaylist {
+.basslinePlaylist  h1{
     padding: 16px;
 }
 
 .cardContainer {
     margin: 30px;
     display: flex;
-    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
     overflow-y: auto;
@@ -313,19 +316,37 @@ body {
         width: 100vw;
     }
     .playbar {
-        width: calc( 100vw - 60px );
+        width: calc( 100vw - 75px );
     }
     
     
     .seekbar{
-        width: calc( 100vw - 70px );
+        width: calc( 100vw - 120px );
         
     }
 
     .hamburger {
         display: block;
     }
-    /* .card{
+    .right{
+        margin: 0;
+    }
+    .card{
         width: 90vw;
-    } */
+    }
+    .cardContainer{
+        margin: 0;
+        justify-content: center;
+    }
+    .close{
+        display: block;
+    }
+
+    .abovebar{
+        flex-direction: column; 
+        gap: 23px;
+        align-items: center;
+        
+    }
+    
 }
