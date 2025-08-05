@@ -38,14 +38,14 @@ async function getsongs() {   // i am using this because there is no any Api its
 
 }
 
-const playMusic = (track , pause=false) => {
-    let audio = new Audio("/songs/" + track)
-    if(!pause){
+const playMusic = (track, pause = false) => {
+    // let audio = new Audio("/songs/" + track) // this line is use less 
+    currentSong.src = "/songs/" + track       // i placed this line after if condition it cretes issu song will not play after next issu solved 
+    if (!pause) {
 
         currentSong.play()
         play.src = "pause.svg"
     }
-    currentSong.src = "/songs/" + track
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 
@@ -55,8 +55,8 @@ async function main() {
 
 
     // Get the list of all the songs
-   songs = await getsongs()
-    playMusic(songs[0] , true)
+    songs = await getsongs()
+    playMusic(songs[0], true)
 
 
     // show all the song in the playlist
@@ -83,7 +83,7 @@ async function main() {
         })
     })
 
-    // Attach an event  listner to play , next and previous
+    // Attach an event listener to play, next and previous
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
@@ -99,40 +99,51 @@ async function main() {
 
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration);
-        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime )}/${secondsToMinutesSeconds(currentSong.duration)}`
-        document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration)* 100 + "%";
+        document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
     })
 
     // Add an event listener to  seekbar
 
-    document.querySelector(".seekbar").addEventListener("click",e=>{
-       
-         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-        document.querySelector(".circle").style.left =  percent + "%";
-        currentSong.currentTime = ((currentSong.duration)* percent)/100;
+    document.querySelector(".seekbar").addEventListener("click", e => {
+
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+        document.querySelector(".circle").style.left = percent + "%";
+        currentSong.currentTime = ((currentSong.duration) * percent) / 100;
     })
 
     // Add an event listner for hamburger
 
-    document.querySelector(".hamburger").addEventListener("click",()=>{
+    document.querySelector(".hamburger").addEventListener("click", () => {
         document.querySelector(".left").style.left = "0"
     })
 
     // Add an event listner for close button
-    document.querySelector(".close").addEventListener("click",()=>{
+    document.querySelector(".close").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-120%"
     })
 
-    // Add an event listner for previous and next
-    previous.addEventListener("click",()=>{
+
+
+    // Add an event listener to previous
+    previous.addEventListener("click", () => {
         console.log("Previous clicked")
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index - 1) >= 0) {
+            playMusic(songs[index - 1])
+        }
     })
 
-    next.addEventListener("click",()=>{
-        console.log("Previous clicked")
-        console.log(currentSong.src)
-        console.log(songs)
+    // Add an event listener to next
+    next.addEventListener("click", () => {
+        console.log("Next clicked")
+
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index + 1) < songs.length) {
+            playMusic(songs[index + 1])
+        }
     })
+
 
 
 }
