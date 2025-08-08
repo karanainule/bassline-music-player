@@ -13,7 +13,7 @@ body {
     color: white;
 }
 
-.close{
+.close {
     display: none;
 }
 
@@ -90,7 +90,7 @@ body {
     padding: 20px;
 }
 
-.basslinePlaylist  h1{
+.basslinePlaylist h1 {
     padding: 16px;
 }
 
@@ -238,7 +238,7 @@ body {
 
 }
 
-.info div{
+.info div {
     word-break: break-all;
 }
 
@@ -281,12 +281,32 @@ body {
     cursor: pointer;
 }
 
-.songinfo,
-.songtime {
+.timevol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songinfo {
     color: black;
     padding: 0 12px;
     width: 250px;
 
+}
+
+.songtime {
+    color: black;
+    padding: 0 12px;
+    width: 125px;
+}
+
+.range {}
+
+.volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .abovebar {
@@ -297,7 +317,7 @@ body {
 
 @media (max-width: 1400px) {
     .left {
-        
+
         position: absolute;
         left: -120%;
         transition: all .3s;
@@ -307,15 +327,25 @@ body {
         padding: 0;
     }
 
-    .songinfo , .songtime{
+    .songinfo,
+    .songtime {
         width: auto;
     }
+
     .left .close {
         position: absolute;
         right: 31px;
         top: 25px;
         width: 29px;
 
+    }
+
+    .timevol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 13px;
     }
 
     .right {
@@ -325,38 +355,43 @@ body {
     .playbar {
         width: 100vw;
     }
+
     .playbar {
-        width: calc( 100vw - 75px );
+        width: calc(100vw - 75px);
     }
-    
-    
-    .seekbar{
-        width: calc( 100vw - 120px );
-        
+
+
+    .seekbar {
+        width: calc(100vw - 120px);
+
     }
 
     .hamburger {
         display: block;
     }
-    .right{
+
+    .right {
         margin: 0;
     }
-    .card{
+
+    .card {
         width: 90vw;
     }
-    .cardContainer{
+
+    .cardContainer {
         margin: 0;
         justify-content: center;
     }
-    .close{
+
+    .close {
         display: block;
     }
 
-    .abovebar{
-        flex-direction: column; 
+    .abovebar {
+        flex-direction: column;
         gap: 23px;
         align-items: center;
-        
+
     }
-    
+
 }
