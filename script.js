@@ -1,6 +1,7 @@
 console.log("Lets write js")
 let currentSong = new Audio();
 let songs;
+let currfolder;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -19,47 +20,24 @@ function secondsToMinutesSeconds(seconds) {
 
 
 
-async function getsongs() {   // i am using this because there is no any Api its just a clint side project so we need to get songs from folder thats why this function which fetch song from folder
+async function getsongs(folder) {   // i am using this because there is no any Api its just a clint side project so we need to get songs from folder thats why this function which fetch song from folder
 
-    let a = await fetch("http://127.0.0.1:3000/songs/")
+    currfolder = folder;
+    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
-    let songs = [];
+    songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split(`/${folder}/`)[1])
         }
 
     }
-    return songs;
 
-}
-
-const playMusic = (track, pause = false) => {
-    // let audio = new Audio("/songs/" + track) // this line is use less 
-    currentSong.src = "/songs/" + track       // i placed this line after if condition it cretes issu song will not play after next issu solved 
-    if (!pause) {
-
-        currentSong.play()
-        play.src = "pause.svg"
-    }
-    document.querySelector(".songinfo").innerHTML = decodeURI(track);
-    document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
-
-}
-
-async function main() {
-
-
-    // Get the list of all the songs
-    songs = await getsongs()
-    playMusic(songs[0], true)
-
-
-    // show all the song in the playlist
+      // show all the song in the playlist
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li> <img class="invert" src="music.svg" alt="">
@@ -76,12 +54,40 @@ async function main() {
     // Attach and eventlistener to each song
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
-            
+
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());  // if not working try innerHTML.trim()
 
 
         })
     })
+
+}
+
+const playMusic = (track, pause = false) => {
+    // let audio = new Audio("/songs/" + track) // this line is use less 
+    currentSong.src = `/${currfolder}/` + track       // i placed this line after if condition it cretes issu song will not play after next issu solved 
+    if (!pause) {
+
+        currentSong.play()
+        play.src = "pause.svg"
+    }
+    document.querySelector(".songinfo").innerHTML = decodeURI(track);
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
+
+
+     
+
+}
+
+async function main() {
+
+
+    // Get the list of all the songs
+    await getsongs("songs/ncs")
+    playMusic(songs[0], true)
+
+
+  
 
     // Attach an event listener to play, next and previous
     play.addEventListener("click", () => {
@@ -127,7 +133,7 @@ async function main() {
 
     // Add an event listener to previous
     previous.addEventListener("click", () => {
-        
+
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
         if ((index - 1) >= 0) {
             playMusic(songs[index - 1])
@@ -136,7 +142,7 @@ async function main() {
 
     // Add an event listener to next
     next.addEventListener("click", () => {
-       
+
 
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
         if ((index + 1) < songs.length) {
@@ -146,9 +152,20 @@ async function main() {
 
     // Add an event to volume
 
-    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
-        currentSong.volume = parseInt(e.target.value)/100
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        currentSong.volume = parseInt(e.target.value) / 100
 
+    })
+
+    // Load the plyalist when card is clicked
+
+    Array.from(document.getElementsByClassName("card")).forEach(e => {
+        console.log(e)
+        e.addEventListener("click", async item => {
+            songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
+            
+
+        })
     })
 
 
