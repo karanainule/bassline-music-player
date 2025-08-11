@@ -303,13 +303,13 @@ body {
 
 }
 
-.songtime {
+/* .songtime {
     color: black;
     padding: 0 12px;
     width: 125px;
-}
+} */
 
-.range {}
+/* .range {} */
 
 .volume {
     display: flex;
