@@ -134,7 +134,7 @@ async function main() {
 
 
     // Get the list of all the songs
-    await getsongs("songs/ncs")
+    await getsongs("songs/hindi")
     playMusic(songs[0], true)
 
     // Display all the albums on the page
