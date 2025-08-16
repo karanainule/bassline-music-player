@@ -94,7 +94,7 @@ async function displayAlbums() {
         const e = array[index];
 
 
-        if (e.href.includes("/songs")) {
+        if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
             let folder = (e.href.split("/").slice(-2)[0])
             // Get the metadata of the folder
             let a = await fetch(`/songs/${folder}/info.json`)
@@ -122,7 +122,7 @@ async function displayAlbums() {
         e.addEventListener("click", async item => {
             songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
             playMusic(songs[0])
-           
+
 
 
         })
@@ -207,22 +207,25 @@ async function main() {
 
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         currentSong.volume = parseInt(e.target.value) / 100
+        if (currentSong.volume > 0) {
+            document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("img/mute.svg", "img/volume.svg")
+        }
 
     })
 
     // Add event listner to mute 
-    document.querySelector(".volume>img").addEventListener("click", e=>{
-        
-        if(e.target.src.includes("volume.svg")){
-           e.target.src = e.target.src.replace("img/volume.svg","img/mute.svg")
+    document.querySelector(".volume>img").addEventListener("click", e => {
+
+        if (e.target.src.includes("volume.svg")) {
+            e.target.src = e.target.src.replace("img/volume.svg", "img/mute.svg")
             currentSong.volume = 0;
             document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
         }
-        else{
-           e.target.src = e.target.src.replace("img/mute.svg","img/volume.svg")
+        else {
+            e.target.src = e.target.src.replace("img/mute.svg", "img/volume.svg")
             currentSong.volume = .10;
             document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
-            
+
         }
     })
 
