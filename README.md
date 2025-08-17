@@ -20,7 +20,7 @@
 
 ---
 ## Home Page
-![ScreenShot](img/Screenshot.pnj)
+![ScreenShot](img/Screenshot.png)
 
 ## 📂 Project Structure
 
