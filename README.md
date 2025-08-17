@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img title="Bassline" src="img/home.svg" alt="Bassline Music Player Logo" width="120" />
+  <img title="Bassline" src="img/logo.svg" alt="Bassline Music Player Logo" width="120" />
   <br>
   🎵 Bassline Music Player
 </h1>
