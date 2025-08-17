@@ -19,6 +19,8 @@
 - 🎨 Dark theme UI  
 
 ---
+## Home Page
+![ScreenShot](img/Screenshot.png)
 
 ## 📂 Project Structure
 
@@ -30,3 +32,5 @@ bassline-music-player/
 │-- /songs/         # Audio files
 │-- /img/        # Icons & images
 │-- README.md
+
+
