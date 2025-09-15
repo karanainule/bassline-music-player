@@ -16,7 +16,8 @@
 - ⏭️⏮️ Next / Previous track controls  
 - 📂 Playlist support  
 - 📱 Responsive design  
-- 🎨 Dark theme UI  
+- 🎨 Dark theme UI
+- 🎼 Multiple Playlist
 
 ---
 ## Home Page
