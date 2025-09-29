@@ -28,7 +28,7 @@
 ```bash
 bassline-music-player/
 │-- index.html      # Main page
-│-- style.css       # Styling
+│-- style.css       # CSS Styling
 │-- script.js       # Music player logic
 │-- /songs/         # Audio files
 │-- /img/        # Icons & images
