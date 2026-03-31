@@ -1,0 +1,112 @@
+﻿{
+    "albums":  [
+                   {
+                       "id":  "ganpati",
+                       "title":  "ganpati bappa songs",
+                       "description":  "High quality ganpati bappa Dj songs",
+                       "artist":  "Various Artists",
+                       "genre":  "Ganpati",
+                       "cover":  "/songs/ganpati/cover.jpg",
+                       "tracks":  [
+                                      {
+                                          "id":  "aata-tari-deva-mala-pavshil-ka",
+                                          "title":  "Aata Tari Deva Mala Pavshil Ka",
+                                          "artist":  "ganpati bappa songs",
+                                          "src":  "/songs/ganpati/Aata Tari Deva Mala Pavshil Ka.mp3"
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "hindi",
+                       "title":  "Hindi Dj songs",
+                       "description":  "Party Dj songs",
+                       "artist":  "Various Artists",
+                       "genre":  "Hindi",
+                       "cover":  "/songs/hindi/cover.jpg",
+                       "tracks":  [
+                                      {
+                                          "id":  "aa-re-pritam-pyaare",
+                                          "title":  "Aa Re Pritam Pyaare",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Aa Re Pritam Pyaare.mp3"
+                                      },
+                                      {
+                                          "id":  "are-deewano-mujhe-pehchano-dj-remix",
+                                          "title":  "Are Deewano Mujhe Pehchano Dj Remix",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Are Deewano Mujhe Pehchano Dj Remix.mp3"
+                                      },
+                                      {
+                                          "id":  "baby-doll-song-ragini",
+                                          "title":  "Baby Doll  Song Ragini ",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Baby Doll  Song Ragini .mp3"
+                                      },
+                                      {
+                                          "id":  "party-all-night-honey-singh",
+                                          "title":  "Party All Night Honey Singh ",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Party All Night Honey Singh .mp3"
+                                      },
+                                      {
+                                          "id":  "tinku-jiya-lyrical-video",
+                                          "title":  "Tinku Jiya Lyrical Video",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Tinku Jiya Lyrical Video.mp3"
+                                      },
+                                      {
+                                          "id":  "tune-maari-entriyaan-gunday",
+                                          "title":  "Tune Maari Entriyaan Gunday ",
+                                          "artist":  "Hindi Dj songs",
+                                          "src":  "/songs/hindi/Tune Maari Entriyaan Gunday .mp3"
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "marathi",
+                       "title":  "Marathi Dj Songs",
+                       "description":  "Party Marathi Dj songs",
+                       "artist":  "Various Artists",
+                       "genre":  "Marathi",
+                       "cover":  "/songs/marathi/cover.jpg",
+                       "tracks":  [
+                                      {
+                                          "id":  "aankhen-to-kholo-swami-aankhen-to-kholo-swami-dj-song",
+                                          "title":  "Aankhen To Kholo Swami - Aankhen To Kholo Swami DJ Song",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Aankhen To Kholo Swami - Aankhen To Kholo Swami DJ Song.mp3"
+                                      },
+                                      {
+                                          "id":  "anathancha-nath-eknath-dj-song",
+                                          "title":  "Anathancha Nath Eknath Dj Song ",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Anathancha Nath Eknath Dj Song .mp3"
+                                      },
+                                      {
+                                          "id":  "apache-vishay-lay-hard-hai-song-dj",
+                                          "title":  "Apache Vishay Lay Hard Hai Song  DJ ",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Apache Vishay Lay Hard Hai Song  DJ .mp3"
+                                      },
+                                      {
+                                          "id":  "chandra-x-apsara-aali",
+                                          "title":  "Chandra x Apsara Aali",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Chandra x Apsara Aali.mp3"
+                                      },
+                                      {
+                                          "id":  "gulabi-saree-x-gulabi-sharara-tapori-mashup-dj",
+                                          "title":  "Gulabi Saree X Gulabi Sharara  Tapori Mashup  Dj",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Gulabi Saree X Gulabi Sharara  Tapori Mashup  Dj.mp3"
+                                      },
+                                      {
+                                          "id":  "halgi-vajati-radha-khude-song",
+                                          "title":  "Halgi Vajati  Radha Khude Song",
+                                          "artist":  "Marathi Dj Songs",
+                                          "src":  "/songs/marathi/Halgi Vajati  Radha Khude Song.mp3"
+                                      }
+                                  ]
+                   }
+               ]
+}
